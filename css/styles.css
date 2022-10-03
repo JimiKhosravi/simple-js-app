@@ -1,6 +1,59 @@
-.body-class {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 80px;
-    color: blueviolet;
+:root {
+    --primary-color: #F96666;
+    --secondary-color: #674747;
+    --third-color: #829460;
+    --light-grey: #EEEEEE;
+    --dark-grey: #2b2b2b;
+    --white: white;
+    --black: black;
 }
+
+body {
+    font-family: "Lato", sans-serif;  
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--light-grey);
+    background-color: var(--primary-color);
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--light-grey);
+}
+
+.pokedex__header {
+    text-align: center;
+}
+
+.button-class {
+    align-items: center;
+    background-color: var(--third-color);
+    width: 40%;
+    color: var(--light-grey);
+    cursor: pointer;
+    text-align: center!important;
+    font-size: 18px;
+    margin: 10px auto;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    list-style-type: none!important;
+    list-style: none;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition-duration: 0.2s;
+    transition-property: opacity;
+}
+
+.pokemon-list {
+    list-style-type: none!important;
+}
+
+.button-class:hover {
+    background-color: var(--light-grey);
+    color: var(--third-color);
+    list-style-type: none;
+}
+
