@@ -13,81 +13,54 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--light-grey);
+    color: var(--black);
     background-color: var(--primary-color);
 }
 
 h1 {
     font-size: 30px;
     font-weight: 700;
-    color: var(--light-grey);
+    color: var(--black);
 }
 
-.pokedex__header {
+.my-class {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--dark-grey);
+    padding: 16px 32px;
     text-align: center;
-}
-
-.button-class {
-    align-items: center;
-    background-color: var(--third-color);
-    width: 40%;
-    color: var(--light-grey);
-    cursor: pointer;
-    text-align: center!important;
-    font-size: 18px;
-    margin: 10px auto;
-    padding: 20px;
     text-decoration: none;
-    display: block;
-    list-style-type: none!important;
-    list-style: none;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    transition-duration: 0.2s;
-    transition-property: opacity;
-}
-
-.pokemon-list {
-    list-style-type: none!important;
-}
-
-.button-class:hover {
-    background-color: var(--light-grey);
-    color: var(--third-color);
-    list-style-type: none;
-}
-
-.modal-container {
-    display: none;
-}
-
-.modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999; 
-    overflow: auto; 
-    display: grid;
-    text-align: center;
-}
-
-.modal-container.is-visible h1{
-    color: var(--dark-grey);
-}
-
-.modal {
-    margin: auto;
     display: inline-block;
-    box-sizing: border-box;
-    background: var(--light-grey);
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: var(--light-grey);
     color: var(--dark-grey);
+    border: 2px solid var(--primary-color);
+}
+
+.my-class:hover {
+    background-color: var(--third-color);
+    color: var(--black);
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display:inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--third-color);
+    color: var(--light-grey);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    align-items: center;
+    align-content: center;
+    padding: 15px;
+    margin: 45px;
 }
