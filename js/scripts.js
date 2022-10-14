@@ -1,11 +1,12 @@
+/* global $*/
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
- 
+
   function add(pokemon) {
-    if (typeof pokemon === "object" && "name" in pokemon) { 
+    if (typeof pokemon === 'object' && 'name' in pokemon) {
        pokemonList.push(pokemon);
-    } 
+    }
   }
 
   function getAll() {
@@ -14,15 +15,15 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon){
    pokemonRepository.loadDetails(pokemon).then(function () {
-     let $list = $(".list");
+     let $list = $('.list');
 
      let $card = $('<div class="card" style="width:200px"></div>');
      let $image = $(
        '<img class="card-img-top" alt="Card image" style="width:50%" />'
      );
-     $image.attr("src", pokemon.imageUrlFront);
+     $image.attr('src', pokemon.imageUrlFront);
      let $cardBody = $('<div class="card-body"></div>');
-     let $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
+     let $cardTitle = $('<h4 class="card-title">' + pokemon.name + '</h4>');
      let $seeProfile = $(
        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See Profile</button>'
      );
@@ -33,12 +34,12 @@ let pokemonRepository = (function () {
      $cardBody.append($cardTitle);
      $cardBody.append($seeProfile);
 
-     $seeProfile.on("click", function (event) {
+     $seeProfile.on('click', function () {
        showDetails(pokemon);
      });
    });
  }
- 
+
   function loadList() {
    return $.ajax(apiUrl)
    .then(function (json) {
@@ -54,7 +55,7 @@ let pokemonRepository = (function () {
    .catch(function (e) {
      console.error(e);
    });
-  } 
+  }
 
   function loadDetails(item) {
    let url = item.detailsUrl;
@@ -87,21 +88,20 @@ let pokemonRepository = (function () {
   }
 
   function showModal(item) {
-   let modalBody = $(".modal-body");
-   let modalTitle = $(".modal-title");
-   let modalHeader = $(".modal-header");
+   let modalBody = $('.modal-body');
+   let modalTitle = $('.modal-title');
    modalTitle.empty();
    modalBody.empty();
 
-   let nameElement = $("<h1>" + item.name + "</h1>");
+   let nameElement = $('<h1>' + item.name + '</h1>');
    let imageElementFront = $('<img class="modal-img" style="width:50%">');
-   imageElementFront.attr("src", item.imageUrlFront);
+   imageElementFront.attr('src', item.imageUrlFront);
    let imageElementBack = $('<img class="modal-img" style="width:50%">');
-   imageElementBack.attr("src", item.imageUrlBack);
-   let heightElement = $("<p>" + "height : " + item.height + "</p>");
-   let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-   let typesElement = $("<p>" + "types : " + item.types + "</p>");
-   let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
+   imageElementBack.attr('src', item.imageUrlBack);
+   let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
+   let weightElement = $('<p>' + 'weight : ' + item.weight + '</p>');
+   let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
+   let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
 
    modalTitle.append(nameElement);
    modalBody.append(imageElementFront);
